@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 
@@ -59,56 +57,29 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container">
-      <div class="container">
-        <div class="row featurette d-flex justify content-center align content-center">
-            <div class="col-md-7">
-              <h2 class="featurette-heading">History About ACompany. <span class="text-muted">It’ll blow your mind.</span></h2>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum porro dolore quam amet, consectetur, quae suscipit perferendis dolorem maxime doloribus quaerat similique facilis asperiores.</p>
+
+
+    <div class="card mb-4" style="max-width: 1000px;">
+        <div class="row no-gutters">
+          <div class="col-md-10">
+            <img src="https://source.unsplash.com/random/?meetings" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">About Our Company </h5>
+              <p class="card-text"></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-            <div class="col-md-5">
-              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="https://source.unsplash.com/random/500x500/?cars" class="img-fluid" alt="">
-
-            </div>
           </div>
-    </div>
-
-    <div class="container my-4">
-      <div class="row featurette d-flex justify content-center align content-center">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Technology Gyan  <span class="text-muted">It’ll show some tech related things.</span></h2>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat sapiente eaque iure asperiores vel? Sit fugit excepturi nam possimus, aliquam quaerat optio laborum inventore?.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="https://source.unsplash.com/random/500x500/?technolgy" class="img-fluid"  alt="">
-            
-      
-          </div>
-        </div>
-
-  </div>
-
-  <div class="container">
-    <div class="row featurette d-flex justify content-center align content-center">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Coding blogs. <span class="text-muted">It all started with ACompany.</span></h2>
-          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-        </div>
-        <div class="col-md-5">
-          <img  src="https://source.unsplash.com/random/500x500/?coding" class="img-fluid"  alt="">
-    
         </div>
       </div>
-</div>
-    
 
-    </div>
 
-    
 
-    
-    
+
+
+
+
 
     <!-- footer  -->
     <!-- Footer -->
