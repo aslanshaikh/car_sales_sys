@@ -55,89 +55,21 @@
                         <a class="nav-link" href="/contact.html">Contact Us</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-
+                
                 <div class="mx-2">
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        login
+                <a class="btn btn-outline-primary" href="about.php" role="button">dealer login</a>
+                <a class="btn btn-outline-primary" href="loginsign/log.php" role="button">login</a>
 
-                        <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
-                            data-bs-target="#signupModal">
-                            signup
+                <a class="btn btn-outline-primary" href="loginsign/reg.php" role="button">sign-up</a>
+
+                   
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- login modal  -->
-    <!-- Button trigger modal -->
-
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login to Acompany </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3 row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                value="email@example.com">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signupModalLabel">singup to Acomapny</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3 row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                value="email@example.com">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    
 
     <hr>
 
@@ -214,9 +146,7 @@
                     <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                     <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+                
             </div>
             <div class="card">
                 <img class="card-img-top" src="images/gi10nios.png" alt="Card image cap">
@@ -235,9 +165,7 @@
                     <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                     <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+              
             </div>
             <div class="card">
                 <img class="card-img-top" src="images/creta2.png" alt="Card image cap">
@@ -247,9 +175,7 @@
                         <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                         <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+               
             </div>
         </div>
 
@@ -264,9 +190,7 @@
                         <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                         <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+               
             </div>
             <div class="card">
                 <img class="card-img-top" src="images/i20.png" alt="Card image cap">
@@ -277,9 +201,7 @@
                     <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                     <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+                
             </div>
             <div class="card">
                 <img class="card-img-top" src="images/tucson2.png" alt="Card image cap">
@@ -291,9 +213,7 @@
                         <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
                         <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+               
             </div>
         </div>
 
