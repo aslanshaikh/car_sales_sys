@@ -17,9 +17,7 @@
             display: flex;
             padding: 5px 5px;
         }
-        img{
-            opacity: 0.5;
-        }
+      
         
     </style>
 

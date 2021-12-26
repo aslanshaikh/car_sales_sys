@@ -58,7 +58,7 @@
                 
                 <div class="mx-2">
 
-                <a class="btn btn-outline-primary" href="about.php" role="button">dealer login</a>
+                <a class="btn btn-outline-primary" href="adminlogin/adminlogin.php" role="button">dealer login</a>
                 <a class="btn btn-outline-primary" href="loginsign/log.php" role="button">login</a>
 
                 <a class="btn btn-outline-primary" href="loginsign/reg.php" role="button">sign-up</a>
