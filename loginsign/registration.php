@@ -20,7 +20,7 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $pass = $_POST['password'];
 
-$q = "select * from customer where name = '$name' && email = '$email' && phone = '$phone' && address = '$address' password = '$pass' ";
+$q = "select * from customer where name = '$name' && email = '$email' && phone = '$phone' && address = '$address' && password = '$pass' ";
 
 $result = mysqli_query($con, $q);
 
