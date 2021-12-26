@@ -14,11 +14,9 @@ $db = mysqli_select_db($con, 'car');
 
 if(isset($_POST['submit'])) {
     $username = $_POST['user'];
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $password = $_POST['pass'];
+    $password = $_POST['password'];
 
-    $sql = "select * from dealer where username = '$username' and fname = '$fname' and lname = '$lname' and password = '$password'";
+    $sql = "select * from dealer where username = '$username' and password = '$password'";
     $query = mysqli_query($con,$sql);
 
     $row = mysqli_num_rows($query);
@@ -32,8 +30,4 @@ if(isset($_POST['submit'])) {
             header('location:adminlogin.php');
         }
     }
-
-
-
-
 ?>

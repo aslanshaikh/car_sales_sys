@@ -15,6 +15,14 @@
         h3 {
             text-align: center;
         }
+        #password{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #login-submit {
+            margin: 0 auto;
+            display: block;
+        }
     </style>
 </head>
 
@@ -58,20 +66,41 @@
                 
                 <div class="mx-2">
 
-                <a class="btn btn-outline-primary" href="adminlogin/adminlogin.php" role="button">dealer login</a>
-                <a class="btn btn-outline-primary" href="loginsign/log.php" role="button">login</a>
-
+                <!-- <a class="btn btn-outline-primary" href="adminlogin/adminlogin.php" role="button">dealer login</a> -->
+                <a class="btn btn-outline-primary" id="dealer-login" role="button">Dealer Log-in</a>
+                <!-- <a class="btn btn-outline-primary" href="loginsign/log.php" role="button">login</a> -->
+<!-- 64, last script, 74-86 -->
+                <a class="btn btn-outline-primary" id="login" role="button">Log in</a>
                 <a class="btn btn-outline-primary" href="loginsign/reg.php" role="button">sign-up</a>
-
-                   
-                </div>
+                
+                
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    
+<div id="login-form-div" class="container">
+<div class="heading text-center mb-5 text-uppercase" id="login-title"></div>   <!-- add html using js -->
+    <div class="row">
+        <div class="col-lg-6">
+            <!-- <form action="adminlogin/logincheck.php" id="login-form" method="post"> -->
+            <form action="loginsign/validation.php" id="login-form" method="post">
+                <hr>
+                <div class="form-group">
+                    <!-- <label>username</label> -->
+                    <input type="text" name="user" class="form-control" placeholder="Enter username">
+                </div>
 
-    <hr>
+                <div class="form-group" id="password">
+                    <!-- <label>password</label> -->
+                    <input type="Password" name="password" class="form-control" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-submit">login</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
 
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -247,6 +276,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Lets get started');
+        document.querySelector('#login-form-div').style.display = 'none';
+        document.querySelector('#login-title').innerHTML = "User Login"
+        // Use buttons to toggle between views
+        document.querySelector('#login').addEventListener('click', () => {
+            document.querySelector('#login-form-div').style.display = 'block';
+        });
+        document.querySelector('#dealer-login').addEventListener('click', () => {
+            document.querySelector('#login-form-div').style.display = 'block';
+            document.querySelector('#login-form').setAttribute("action", "adminlogin/logincheck.php");
+            document.querySelector('#login-title').innerHTML = "Admin Login"
+            console.log(document.querySelector('#login-form').getAttribute("action"));
+        });
+    });
+</script>
 </body>
 
 </html>

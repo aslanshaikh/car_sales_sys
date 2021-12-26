@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-
-header('location:log.php');
+// header('location:first.php');
 $con = mysqli_connect('localhost','root');
 
 if($con) {
@@ -16,20 +15,16 @@ mysqli_select_db($con, 'car');
 
 $name = $_POST['user'];
 $pass = $_POST['password'];
-
 $q = "select * from customer where name = '$name' && password = '$pass' ";
 
 $result = mysqli_query($con, $q);
 
 $num = mysqli_num_rows($result);
-
 if($num == 1) {
     $_SESSION["username"] = $name;
-
-    header('location:home.php');
+     header('location:home.php');
 } else{
-
-   header('location:log.php');
+    header('location:log.php');
 }
 
 ?>
