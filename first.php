@@ -1,10 +1,24 @@
 <?php
+    session_start();
+    $login = false;
+    if(isset($_SESSION['user'])){
+        $login = true;
+    }
+    include('config/db_connect.php');
+    // write query for all pizzas
+	$sql = 'SELECT * FROM cardet';
 
-session_start();
-$login = false;
-if(isset($_SESSION['user'])){
-    $login = true;
-}
+	// get the result set (set of rows)
+	$result = mysqli_query($con, $sql);
+
+	// fetch the resulting rows as an array
+	$cars = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	// free the $result from memory (good practise)
+	mysqli_free_result($result);
+
+	// close connection
+	mysqli_close($con);
 ?>
 <!doctype html>
 <html lang="en">
@@ -170,37 +184,31 @@ if(isset($_SESSION['user'])){
     <hr>
     <br>
     <br>
-    <h3>Models 
         <?php 
             if($login == true) {
-                echo 'Hello';
+                echo "<h3>Welcome ".$_SESSION['user']." </h3>";
             }
         ?>
+    <h3>Models 
     </h3>
 
 
     <div class="containercard my-10">
-
         <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" src="images/santro.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Hyundai Santro</h5>
-                    <p class="card-text">Hyundai Santro is a 5 seater Hatchback available in a price range of ₹ 4.77 -
-                        6.45 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual
-                        and AMT. The Santro is available in 5 colours. The mileage of Santro ranges from 20 km/kg to 30
-                        km/kg.
-                        Engine: 1086 cc
-                        Price: ₹ 4.77 Lakh onwards
-                        Fuel Type: Petrol & CNG
-                        Seating Capacity: 5 Seater</p>
-                    <!-- <a href="">know more </a> -->
-                    <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                    <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
+            <?php foreach($cars as $car): ?>
+                <div class="card">
+                    <img class="card-img-top" src="<?php echo htmlspecialchars($car['images']); ?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai <?php echo htmlspecialchars($car['name'])." ".htmlspecialchars($car['model']); ?></h5>
+                        <p class="card-text"><?php echo htmlspecialchars($car['features']); ?></p>
+                        <!-- <a href="">know more </a> -->
+                        <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
+                        <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
+                    </div>
                 </div>
-                
-            </div>
-            <div class="card">
+            <?php endforeach; ?>
+        </div>    
+            <!-- <div class="card">
                 <img class="card-img-top" src="images/gi10nios.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Grand i10 nios</h5>
@@ -267,7 +275,7 @@ if(isset($_SESSION['user'])){
                 </div>
                
             </div>
-        </div>
+        </div> -->
 
     </div>
     <!-- footer  -->
