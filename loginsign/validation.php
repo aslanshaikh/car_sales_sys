@@ -2,16 +2,7 @@
 
 session_start();
 // header('location:first.php');
-$con = mysqli_connect('localhost','root');
-
-if($con) {
-    echo "connection succesfull ";
-}
-else{
-    echo "not";
-}
-
-mysqli_select_db($con, 'car');
+include('../config/db_connect.php');
 
 $name = $_POST['username'];
 $pass = $_POST['password'];
@@ -26,8 +17,15 @@ $result = mysqli_query($con, $q);
 $num = mysqli_num_rows($result);
 if($num == 1) {
     $_SESSION["user"] = $name;
-    if ($who=="user")
+    if ($who=="user") {
+        $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $id = 1;
+        foreach($users as $user) {
+            $id = $user['cid'];
+        }
+        $_SESSION["customerId"] = $id;
         header('location: ../first.php');
+    }
     else {
         header('location: ../adminlogin/adminmain.php');
     }

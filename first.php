@@ -33,19 +33,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-    <style>
-        h3 {
-            text-align: center;
-        }
-        #password{
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        #login-submit {
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="static/first.css">
 </head>
 
 <body>
@@ -98,7 +86,6 @@
             }
             else {
                 echo '<a class="btn btn-outline-primary" id="login" role="button">Log in</a>';
-
             }
         ?>
                 <a class="btn btn-outline-primary" href="loginsign/reg.php" role="button">sign-up</a>
@@ -109,27 +96,19 @@
     </div>
 </nav>
 
-<div id="login-form-div" class="container text-center">
-<div class="heading text-center mb-5 text-uppercase" id="login-title"></div>   <!-- add html using js -->
-    <div class="row">
-        <div class="col-lg-6">
-            <!-- <form action="adminlogin/logincheck.php" id="login-form" method="post"> -->
-            <form id="login-form" method="post" action="loginsign/validation.php">
-                <hr>
-                <div class="form-group">
-                    <!-- <label>username</label> -->
-                    <input type="text" autofocus name="username" class="form-control" placeholder="Enter username">
-                </div>
+<div class="form-popup" id="login-form-div">
+    <form action="loginsign/validation.php" class="form-container" method="post" id="login-from">
+        <h1>Login</h1>
 
-                <div class="form-group" id="password">
-                    <!-- <label>password</label> -->
-                    <input type="Password" name="password" class="form-control" placeholder="Enter password">
-                </div>
-                    <input type="hidden" name="user-or-admin" id="user-or-admin">
-                <button type="submit" class="btn btn-primary" id="login-submit" name="submit">login</button>
-            </form>
-        </div>
-    </div>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter username" name="username" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <input type="hidden" name="user-or-admin" id="user-or-admin">
+        <button type="submit" class="btn btn-primary" id="login-submit" name="submit">Login</button>
+    </form>
 </div>
 <hr>
 
@@ -186,7 +165,7 @@
     <br>
         <?php 
             if($login == true) {
-                echo "<h3>Welcome ".$_SESSION['user']." </h3>";
+                echo "<h3>Welcomee ".$_SESSION['customerId']." </h3>";
             }
         ?>
     <h3>Models 
@@ -202,8 +181,13 @@
                         <h5 class="card-title">Hyundai <?php echo htmlspecialchars($car['name'])." ".htmlspecialchars($car['model']); ?></h5>
                         <p class="card-text"><?php echo htmlspecialchars($car['features']); ?></p>
                         <!-- <a href="">know more </a> -->
-                        <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                        <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
+                        <?php if($login == true) : ?>
+                            <a class="btn btn-outline-primary" role="button" href="first.php?carId=<?php echo $car['carid'] ?>&userId=<?php echo $_SESSION['customerId'] ?>">Book Test-Drive</a>
+                            <a class="btn btn-outline-primary" role="button" href="about.php?id=<?php echo $car['carid'] ?>">Buy Now</a>
+                        <?php else : ?>
+                            <button class="btn btn-outline-primary login-required" onclick="alert('Please Log-in first');">Book Test-Drive</a>
+                            <button class="btn btn-outline-primary login-required" onclick="alert('Please Log-in first');">Buy Now</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -312,14 +296,24 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Lets get started');
+        function login() {
+            alert("PLease log-in first");
+        }
         document.querySelector('#login-form-div').style.display = 'none';
-        // Use buttons to toggle between views
+        // // Use buttons to toggle between views
+        // document.getElementsByClassName('login-required').addEventListener('click', () => {
+        //         console.log("Hello");
+        //         alert("PLease log-in first");
+        //     }
+        // );
+
         document.querySelector('#login').addEventListener('click', () => {
             if(document.querySelector('#login-form-div').style.display == 'none') {
-                document.querySelector('#login-title').innerHTML = "User Login"
+                document.querySelector('#user-or-admin').setAttribute("value", "user");
+                console.log(document.querySelector('#user-or-admin').getAttribute("value"));
+                // document.querySelector('#login-title').innerHTML = "User Login"
                 // document.querySelector('#login-form').setAttribute("action", "loginsign/validation.php");
                 document.querySelector('#login-form-div').style.display = 'block';
-                document.querySelector('#user-or-admin').setAttribute("value", "user");
             }
             else {
                 document.querySelector('#login-form-div').style.display = 'none';
@@ -327,15 +321,15 @@
         });
         document.querySelector('#dealer-login').addEventListener('click', () => {
             if(document.querySelector('#login-form-div').style.display == 'none') {
+                document.querySelector('#user-or-admin').setAttribute("value", "admin");
+                console.log(document.querySelector('#user-or-admin').getAttribute("value"));
                 document.querySelector('#login-form-div').style.display = 'block';
                 // document.querySelector('#login-form').setAttribute("action", "adminlogin/logincheck.php");
-                document.querySelector('#user-or-admin').setAttribute("value", "admin");
-                document.querySelector('#login-title').innerHTML = "Admin Login";
+                // document.querySelector('#login-title').innerHTML = "Admin Login";
             }
             else {
                 document.querySelector('#login-form-div').style.display = 'none';
             }
-            // console.log(document.querySelector('#login-form').getAttribute("action"));
         });
     });
 </script>

@@ -3,16 +3,7 @@
 session_start();
 
 header('location:reg.php');
-$con = mysqli_connect('localhost','root');
-
-if($con) {
-    echo"connection succesfull ";
-}
-else{
-    echo"not";
-}
-
-mysqli_select_db($con, 'car');
+include('config/db_connect.php');
 
 $name = $_POST['user'];
 $email = $_POST['email'];
