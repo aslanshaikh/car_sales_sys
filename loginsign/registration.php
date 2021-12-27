@@ -32,7 +32,8 @@ if($num == 1) {
 
     $qy = "insert into customer(name, email, phone, address, password) values ('$name', '$email', '$phone', '$address', '$pass')";
     mysqli_query($con, $qy);
-   
+    $_SESSION["user"] = $name;
+    header('location:home.php');
 }
 
 ?>

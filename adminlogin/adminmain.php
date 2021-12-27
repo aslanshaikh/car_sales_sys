@@ -26,7 +26,7 @@ if(!isset($_SESSION['user'])) {
     <div class="heading text-center text-uppercase">
        hello sir <?php echo $_SESSION['user'] ?> swagat hai 
     </div>
-    <a href="logout.php" class=" btn btn-danger">logout </a>
+    <a href="..\first.php" class=" btn btn-danger">logout </a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

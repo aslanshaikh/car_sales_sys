@@ -1,3 +1,16 @@
+<!-- delete -->
+<?php
+
+session_start();
+
+if(!isset($_SESSION['username']) and !isset($_SESSION['user-or-admin'])){
+
+    header('location:log.php');
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,6 +33,8 @@
     <header>
         <div class="container center-div shadow p-3">
             <div class="heading text-center mb-5 text-uppercase">ADMIN LOGIN PAGE</div>
+            <h2 class="text-center text-success">hello duniya welcome <?php echo $_SESSION['username']; ?> </h2>
+        
             <div class="container row d-flex flex-row justify-content-center mb-5">
                 <div class="admin-form shadow p-2">
                     <form action="logincheck.php" method="POST">

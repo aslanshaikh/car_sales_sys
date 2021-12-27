@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+$login = false;
+if(isset($_SESSION['user'])){
+    $login = true;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -70,7 +78,15 @@
                 <a class="btn btn-outline-primary" id="dealer-login" role="button">Dealer Log-in</a>
                 <!-- <a class="btn btn-outline-primary" href="loginsign/log.php" role="button">login</a> -->
 <!-- 64, last script, 74-86 -->
-                <a class="btn btn-outline-primary" id="login" role="button">Log in</a>
+<?php 
+            if($login == true) {
+                echo '<a href=" loginsign/logout.php" class="btn btn-outline-primary" id="login" role="button">Log out</a>';
+            }
+            else {
+                echo '<a class="btn btn-outline-primary" id="login" role="button">Log in</a>';
+
+            }
+        ?>
                 <a class="btn btn-outline-primary" href="loginsign/reg.php" role="button">sign-up</a>
                 
                 
@@ -79,23 +95,24 @@
     </div>
 </nav>
 
-<div id="login-form-div" class="container">
+<div id="login-form-div" class="container text-center">
 <div class="heading text-center mb-5 text-uppercase" id="login-title"></div>   <!-- add html using js -->
     <div class="row">
         <div class="col-lg-6">
             <!-- <form action="adminlogin/logincheck.php" id="login-form" method="post"> -->
-            <form action="loginsign/validation.php" id="login-form" method="post">
+            <form id="login-form" method="post" action="loginsign/validation.php">
                 <hr>
                 <div class="form-group">
                     <!-- <label>username</label> -->
-                    <input type="text" name="user" class="form-control" placeholder="Enter username">
+                    <input type="text" autofocus name="username" class="form-control" placeholder="Enter username">
                 </div>
 
                 <div class="form-group" id="password">
                     <!-- <label>password</label> -->
                     <input type="Password" name="password" class="form-control" placeholder="Enter password">
                 </div>
-                <button type="submit" class="btn btn-primary" id="login-submit">login</button>
+                    <input type="hidden" name="user-or-admin" id="user-or-admin">
+                <button type="submit" class="btn btn-primary" id="login-submit" name="submit">login</button>
             </form>
         </div>
     </div>
@@ -153,7 +170,13 @@
     <hr>
     <br>
     <br>
-    <h3>Models</h3>
+    <h3>Models 
+        <?php 
+            if($login == true) {
+                echo 'Hello';
+            }
+        ?>
+    </h3>
 
 
     <div class="containercard my-10">
@@ -253,8 +276,9 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2022 Copyright:
-            <a href="index.html"> ACompany.com</a>
+            <a href="index.html"> ACompany.com </a>
         </div>
+
         <!-- Copyright -->
 
     </footer>
@@ -281,16 +305,29 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Lets get started');
         document.querySelector('#login-form-div').style.display = 'none';
-        document.querySelector('#login-title').innerHTML = "User Login"
         // Use buttons to toggle between views
         document.querySelector('#login').addEventListener('click', () => {
-            document.querySelector('#login-form-div').style.display = 'block';
+            if(document.querySelector('#login-form-div').style.display == 'none') {
+                document.querySelector('#login-title').innerHTML = "User Login"
+                // document.querySelector('#login-form').setAttribute("action", "loginsign/validation.php");
+                document.querySelector('#login-form-div').style.display = 'block';
+                document.querySelector('#user-or-admin').setAttribute("value", "user");
+            }
+            else {
+                document.querySelector('#login-form-div').style.display = 'none';
+            }
         });
         document.querySelector('#dealer-login').addEventListener('click', () => {
-            document.querySelector('#login-form-div').style.display = 'block';
-            document.querySelector('#login-form').setAttribute("action", "adminlogin/logincheck.php");
-            document.querySelector('#login-title').innerHTML = "Admin Login"
-            console.log(document.querySelector('#login-form').getAttribute("action"));
+            if(document.querySelector('#login-form-div').style.display == 'none') {
+                document.querySelector('#login-form-div').style.display = 'block';
+                // document.querySelector('#login-form').setAttribute("action", "adminlogin/logincheck.php");
+                document.querySelector('#user-or-admin').setAttribute("value", "admin");
+                document.querySelector('#login-title').innerHTML = "Admin Login";
+            }
+            else {
+                document.querySelector('#login-form-div').style.display = 'none';
+            }
+            // console.log(document.querySelector('#login-form').getAttribute("action"));
         });
     });
 </script>

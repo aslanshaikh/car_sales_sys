@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['user'])){
 
     header('location:log.php');
 }
@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
 <body>
     <div class="container">
 
-        <h2 class="text-center text-success">hello duniya welcome <?php echo $_SESSION['username']; ?> </h2>
+        <h2 class="text-center text-success">hello duniya welcome <?php echo $_SESSION['user']; ?> </h2>
         <a href="logout.php">logout</a>
     </div>
     
