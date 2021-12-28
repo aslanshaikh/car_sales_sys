@@ -55,8 +55,8 @@ margin-bottom:10px;
 opacity: 0.8;
 }
 
-#btn-book {
+/* center the buttons */
+#btn-book #btn-test {
    margin-left: 10px;
    border: solid black 2px;
-   margin: 10px;
 }

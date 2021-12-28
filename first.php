@@ -34,6 +34,11 @@
 
     <title>Hello, world!</title>
     <link rel="stylesheet" href="static/first.css">
+    <script>
+        function loginAlert() {
+            alert("Please log-in first");
+        }
+    </script>
 </head>
 
 <body>
@@ -182,11 +187,11 @@
                         <p class="card-text"><?php echo htmlspecialchars($car['features']); ?></p>
                         <!-- <a href="">know more </a> -->
                         <?php if($login == true) : ?>
+                            <a class="btn btn-outline-primary" role="button" href="bookCar.php?carId=<?php echo $car['carid'] ?>&userId=<?php echo $_SESSION['customerId'] ?>">Book Your Car</a>
                             <a class="btn btn-outline-primary" role="button" href="first.php?carId=<?php echo $car['carid'] ?>&userId=<?php echo $_SESSION['customerId'] ?>">Book Test-Drive</a>
-                            <a class="btn btn-outline-primary" role="button" href="about.php?id=<?php echo $car['carid'] ?>">Buy Now</a>
                         <?php else : ?>
-                            <button class="btn btn-outline-primary" id="btn-book" onclick="alert('Please Log-in first');">Book Test-Drive</button>
-                            <button class="btn btn-outline-primary" id="btn-test" onclick="alert('Please Log-in first');">Buy Now</button>
+                            <button class="btn btn-outline-primary" id="btn-book" onclick="loginAlert();">Book Test-Drive</button>
+                            <button class="btn btn-outline-primary" id="btn-test" onclick="loginAlert();">Buy Now</button>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -296,9 +301,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Lets get started');
-        function login() {
-            alert("PLease log-in first");
-        }
+        
         document.querySelector('#login-form-div').style.display = 'none';
         // // Use buttons to toggle between views
         // document.getElementsByClassName('login-required').addEventListener('click', () => {
@@ -306,6 +309,7 @@
         //         alert("PLease log-in first");
         //     }
         // );
+
 
         document.querySelector('#login').addEventListener('click', () => {
             if(document.querySelector('#login-form-div').style.display == 'none') {
