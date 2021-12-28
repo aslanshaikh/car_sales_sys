@@ -5,7 +5,7 @@ session_start();
 
 if(!isset($_SESSION['username']) and !isset($_SESSION['user-or-admin'])){
 
-    header('location:log.php');
+    header('location: ..\first.php');
 }
 
 

@@ -100,7 +100,7 @@
     <form action="loginsign/validation.php" class="form-container" method="post" id="login-from">
         <h1>Login</h1>
 
-        <label for="email"><b>Email</b></label>
+        <label for="username"><b>Username</b></label>
         <input type="text" placeholder="Enter username" name="username" required>
 
         <label for="psw"><b>Password</b></label>
@@ -185,8 +185,8 @@
                             <a class="btn btn-outline-primary" role="button" href="first.php?carId=<?php echo $car['carid'] ?>&userId=<?php echo $_SESSION['customerId'] ?>">Book Test-Drive</a>
                             <a class="btn btn-outline-primary" role="button" href="about.php?id=<?php echo $car['carid'] ?>">Buy Now</a>
                         <?php else : ?>
-                            <button class="btn btn-outline-primary login-required" onclick="alert('Please Log-in first');">Book Test-Drive</a>
-                            <button class="btn btn-outline-primary login-required" onclick="alert('Please Log-in first');">Buy Now</a>
+                            <button class="btn btn-outline-primary" id="btn-book" onclick="alert('Please Log-in first');">Book Test-Drive</button>
+                            <button class="btn btn-outline-primary" id="btn-test" onclick="alert('Please Log-in first');">Buy Now</button>
                         <?php endif; ?>
                     </div>
                 </div>
