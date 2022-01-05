@@ -130,7 +130,7 @@
             <div class="carousel-item active">
                 <img src="images/carou1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2>Welcome to A.company</h2>
+                    <h2>Welcome to AJA company</h2>
 
                     <button type="button" class="btn btn-primary">Know More</button>
                     <button type="button" class="btn btn-dark">Quick Look</button>
@@ -139,7 +139,7 @@
             <div class="carousel-item">
                 <img src="images/carou2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2>Welcome to A.company</h2>
+                    <h2>Welcome to AJA company</h2>
                     <p></p>
                     <button type="button" class="btn btn-primary">Know More</button>
                     <button type="button" class="btn btn-dark">Quick Look</button>
@@ -148,7 +148,7 @@
             <div class="carousel-item">
                 <img src="https://source.unsplash.com/random/800x300/?cars" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2>Welcome to A.company</h2>
+                    <h2>Welcome to AJA company</h2>
                     <button type="button" class="btn btn-primary">Know More</button>
                     <button type="button" class="btn btn-dark">Quick Look</button>
                 </div>
@@ -273,7 +273,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2022 Copyright:
-            <a href="index.html"> ACompany.com </a>
+            <a href="first.php"> ACompany.com </a>
         </div>
 
         <!-- Copyright -->
