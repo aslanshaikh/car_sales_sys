@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2021 at 04:46 AM
+-- Generation Time: Jan 05, 2022 at 05:25 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -32,6 +32,14 @@ CREATE TABLE `book` (
   `carid` int(255) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`cid`, `carid`, `date`) VALUES
+(2, 103, '0000-00-00'),
+(2, 104, '0000-00-00');
 
 -- --------------------------------------------------------
 
