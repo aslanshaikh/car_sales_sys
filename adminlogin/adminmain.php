@@ -30,7 +30,7 @@ if(!isset($_SESSION['user'])) {
     <?php echo $_SESSION['user'] ?> swagat hai
   </div>
   <div class="container">
-    <div class="col-lg-12">
+    <div class="col-lg-24">
       <br>
       <h2 class="text-warning text-center">displaying records</h2>
 
@@ -80,11 +80,15 @@ if(!isset($_SESSION['user'])) {
             <?php echo $res['features'];  ?>
           </td>
           <td>
-            <?php echo $res['images'];  ?>
+          <?php echo $res['images']; ?>
           </td>
-          <td> <button class="btn btn-danger"> <a href="delete.php?id=<?php echo $res['carid']; ?>"
-                class="text-white">delete</a>
-            </button></td>
+          <!-- <td> -->
+          <!-- <?php /*
+          <img  src="<?php echo htmlspecialchars($res['images']); ?>" alt="Card image cap"> -->
+          */?>
+          </td> -->
+          <td>  <a class="btn btn-danger"href="delete.php?carid=<?php echo $res['carid']; ?>">delete</a>
+            </td>
 
           <td> <button class="btn btn-primary"> <a href="update.php?id=<?php echo $res['carid']; ?>"
                 class="text-white">update</a>
@@ -97,8 +101,11 @@ if(!isset($_SESSION['user'])) {
       </table>
     </div>
   </div>
+  <a href="insert.php" class=" btn btn-danger">insert new car </a>
+  
   <a href="..\loginsign\logout.php" class=" btn btn-danger">logout </a>
-
+  <?php $res = mysqli_fetch_array($query) ?>
+  <img  src="<?php echo htmlspecialchars($res[101]['images']); ?>" alt="Card image cap">
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

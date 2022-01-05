@@ -3,9 +3,12 @@
 include 'conn.php';
 if(isset($_POST['done'])) {
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $q = "INSERT INTO `crud`(`username`, `password`) VALUES ('$username','$password')";
+    $name = $_POST['name'];
+    $model = $_POST['model'];
+    $price = $_POST['price'];
+    $features = $_POST['features'];
+    $images = $_POST['images'];
+    $q = "INSERT INTO `cardet`(`model`, `name`, `price`, `features`, `images`) VALUES ('$model','$name', '$price', '$features', '$images')";
 
     $query = mysqli_query($con,$q);
 }
@@ -31,14 +34,19 @@ if(isset($_POST['done'])) {
         <form action="" method="post"> <br>
             <div class="card">
                 <div class="card-header bg-dark">
-                    <h1 class="text-white text-center">Insert Operation</h1>
+                    <h1 class="text-white text-center">Insert new car</h1>
                 </div>
 
-                <label>username: </label>
-                <input type="text" name="username" class="form-control"> <br>
-
-                <label>password: </label>
-                <input type="Password" name="password" class="form-control"> <br>
+                <label>name: </label>
+                <input type="text" name="name" class="form-control"> <br>
+                <label>model: </label>
+                <input type="text" name="model" class="form-control"> <br> 
+                <label>image link: </label>
+                <input type="text" name="images" class="form-control"> <br> 
+                <label>price: </label>
+                <input type="text" name="price" class="form-control"> <br>
+                <label>features: </label>
+                <input type="text" name="features" class="form-control"> <br>
 
                 <button class="btn btn-success" type="submit" name="done">SUBMIT</button>
                 <br>

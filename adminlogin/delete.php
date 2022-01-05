@@ -1,6 +1,6 @@
 <?php
 
-include'db_connect.php';
+include'conn.php';
 
 $carid = $_GET['carid'];
 
@@ -11,3 +11,9 @@ mysqli_query($con,$q);
 header('location:adminmain.php');
 
 ?>
+<html>
+    <title>
+        hello
+    </title>
+
+</html>
