@@ -32,55 +32,43 @@ if(!isset($_SESSION['user'])) {
   <div class="container">
     <div class="col-lg-24">
       <br>
-      <h2 class="text-warning text-center">Displaying Records </h2>
+      <h2 class="text-warning text-center">Displaying Records OF BOOKING  </h2>
 
       <table class="table table-striped table-hover table-bordered">
 
         <tr class="bg-dark text-white text-center">
-          <th>car ID</th>
-          <th>MODEL </th>
-          <th>NAME</th>
-          <th>PRICE</th>
-          <th>FEATURES</th>
-          <th>IMAGES</th>
-          <th>DELETE</th>
+          <th> CID</th>
+          <th>CARID </th>
+          <th>DATE</th>
+          
 
         </tr>
 
         <?php
           include'conn.php';
-            $q = "select * from cardet";
+            $q = "select * from book";
 
             $query = mysqli_query($con,$q);
             while($res = mysqli_fetch_array($query)){  
          ?>
 
         <tr class="text-center">
+        <td>
+            <?php echo $res['cid'];  ?>
+          </td>
           <td>
             <?php echo $res['carid'];  ?>
           </td>
           <td>
-            <?php echo $res['model'];  ?>
+            <?php echo $res['date'];  ?>
           </td>
-          <td>
-            <?php echo $res['name'];  ?>
-          </td>
-          <td>
-            <?php echo $res['price'];  ?>
-          </td>
-          <td>
-            <?php echo $res['features'];  ?>
-          </td>
-          <td>
-          <img  src="../<?php echo ($res['images']); ?>" alt="Card image cap">
-          </td>
+          
           <!-- <td> -->
             <!-- <?php /*
           <img  src="<?php echo htmlspecialchars($res['images']); ?>" alt="Card image cap"> -->
           */?>
           </td> -->
-          <td>  <a class="btn btn-danger "href="delete.php?carid=<?php echo $res['carid']; ?>">delete</a>
-        </td>
+          
         
               
             </tr>
@@ -90,8 +78,7 @@ if(!isset($_SESSION['user'])) {
       </table>
     </div>
   </div>
-  <a href="insert.php" class=" btn btn-primary">insert new car </a>
-  <a href="dispbking.php" class=" btn btn-primary">show booked car details</a>
+  
   
   <a href="..\loginsign\logout.php" class=" btn btn-primary">logout </a>
   
