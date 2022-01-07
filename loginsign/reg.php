@@ -13,7 +13,7 @@
     <title>registration page </title>
     <style>
         h2{
-            background-color: aqua;
+            background-color:aqua;
             display: flex;
             padding: 5px 5px;
         }
@@ -35,7 +35,8 @@
         
             <div class="col-lg-6">
                 
-                    <h2>Registration form</h2>
+                    <h2>Sign-up form</h2>
+                    
                     <form action="registration.php" method="post">
                         <div class="form-group">
                             <label>enter name</label>

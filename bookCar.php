@@ -55,7 +55,7 @@
 
 	<div class="container center grey-text">
 		<?php if($customer): ?>
-			<h2>Please Enter the below details to book your Car</h2>
+			<h2><centre>Please Enter the below details to book your Car</h2>
             <h4>Name: <?php echo $customer['name'];?></h4>
             <h4>Car: <?php echo $car['name']." ".$car['model'];?></h4>
             <h4>Price: <?php echo $car['price'];?></h4>
