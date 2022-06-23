@@ -170,7 +170,7 @@
     <br>
         <?php 
             if($login == true) {
-                echo "<h3>Welcomee ".$_SESSION['customerId']." </h3>";
+                echo "<h3>Welcome</h3>";
             }
         ?>
     <h3>Models 
@@ -215,55 +215,7 @@
                     <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
                 </div>
               
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="images/creta2.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Creta</h5>
-                    <p class="card-text">The Hyundai Creta has 1 Diesel Engine and 2 Petrol Engine on offer. The Diesel engine is 1493 cc while the Petrol engine is 1497 cc and 1353 cc . It is available with Manual & Automatic transmission.Depending upon the variant and fuel type the Creta has a mileage of 16.8 to 21.4 kmpl . The Creta is a 5 seater 4 cylinder car and has length of 4300mm, width of 1790mm and a wheelbase of 2610mm.</p>
-                        <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                        <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
-                </div>
-               
-            </div>
-        </div>
 
-        <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" src="images/elantra2.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Elantra</h5>
-
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                        <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                        <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
-                </div>
-               
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="images/i20.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">I20</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                    <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
-                </div>
-                
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="images/tucson2.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Tucson</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                        <a class="btn btn-outline-primary" href="first.php" role="button">Book Test-Drive</a>
-                        <a class="btn btn-outline-primary" href="about.php" role="button">Buy Now</a>
-                </div>
-               
-            </div>
         </div> -->
 
     </div>
@@ -292,31 +244,18 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-
+    
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Lets get started');
         
         document.querySelector('#login-form-div').style.display = 'none';
-        // // Use buttons to toggle between views
-        // document.getElementsByClassName('login-required').addEventListener('click', () => {
-        //         console.log("Hello");
-        //         alert("PLease log-in first");
-        //     }
-        // );
 
 
         document.querySelector('#login').addEventListener('click', () => {
             if(document.querySelector('#login-form-div').style.display == 'none') {
                 document.querySelector('#user-or-admin').setAttribute("value", "user");
                 console.log(document.querySelector('#user-or-admin').getAttribute("value"));
-                // document.querySelector('#login-title').innerHTML = "User Login"
-                // document.querySelector('#login-form').setAttribute("action", "loginsign/validation.php");
                 document.querySelector('#login-form-div').style.display = 'block';
             }
             else {
@@ -328,8 +267,6 @@
                 document.querySelector('#user-or-admin').setAttribute("value", "admin");
                 console.log(document.querySelector('#user-or-admin').getAttribute("value"));
                 document.querySelector('#login-form-div').style.display = 'block';
-                // document.querySelector('#login-form').setAttribute("action", "adminlogin/logincheck.php");
-                // document.querySelector('#login-title').innerHTML = "Admin Login";
             }
             else {
                 document.querySelector('#login-form-div').style.display = 'none';

@@ -11,6 +11,7 @@ if(isset($_POST['done'])) {
     $q = "INSERT INTO `cardet`(`model`, `name`, `price`, `features`, `images`) VALUES ('$model','$name', '$price', '$features', '$images')";
 
     $query = mysqli_query($con,$q);
+    header("location:adminmain.php");
 }
 
 ?>

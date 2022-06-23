@@ -6,5 +6,7 @@
 	if(!$con){
 		echo 'Connection error: '. mysqli_connect_error();
 	}
+	else 
+		echo "aaaya re baba";
     mysqli_select_db($con, 'car');
 ?>

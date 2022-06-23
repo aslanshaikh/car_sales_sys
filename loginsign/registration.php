@@ -3,8 +3,7 @@
 session_start();
 
 header('location:reg.php');
-include('config/db_connect.php');
-
+include('../config/db_connect.php');
 $name = $_POST['user'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -18,13 +17,14 @@ $result = mysqli_query($con, $q);
 $num = mysqli_num_rows($result);
 
 if($num == 1) {
-    echo"duplicate data found ";
+    header('location:home.php');
+
 } else{
 
     $qy = "insert into customer(name, email, phone, address, password) values ('$name', '$email', '$phone', '$address', '$pass')";
     mysqli_query($con, $qy);
     $_SESSION["user"] = $name;
-    header('location:home.php');
+    header('location:../first.php');
 }
 
 ?>

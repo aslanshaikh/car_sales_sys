@@ -50,29 +50,38 @@
 
 <!DOCTYPE html>
 <html>
-
+	<head>
+		<title> Book_Car</title>
+		<link rel="stylesheet" href="static/book.css">
+	</head>
+<body>
 	<?php /* include('templates/header.php');*/ ?>
 
 	<div class="container center grey-text">
 		<?php if($customer): ?>
-			<h2><centre>Please Enter the below details to book your Car</h2>
-            <h4>Name: <?php echo $customer['name'];?></h4>
+			<div class="text">
+                <h2> Please Enter the below details to book your Car NOW !!!</h2>
+            </div>
+			<h4>Name: <?php echo $customer['name'];?></h4>
             <h4>Car: <?php echo $car['name']." ".$car['model'];?></h4>
             <h4>Price: <?php echo $car['price'];?></h4>
+			<div class="content">
+				<form action="bookCar.php" method="POST">
+					<!-- check both idsss -->
+					<input type="hidden" name="carId" value="<?php echo $carId; ?>">
+					<input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+					<!-- date is coming as 0000 in db -->
+					<label for="Test">Enter Date</label>
+					<input type="text" id="Test" name="date">
 
-            <form action="" method="POST">
-                <!-- check both idsss -->
-				<input type="hidden" name="carId" value="<?php echo $carId; ?>">
-				<input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-                <!-- date is coming as 0000 in db -->
-                <input type="date" id="Test_DatetimeLocal" name="date">
-				<input type="submit" name="book" value="Book" class="btn brand z-depth-0">
-			</form>
+					<input type="submit" name="book" value="Book" class="btn brand z-depth-0">
+				</form>
+			</div>
         <?php else: ?>
 			<h5>No such customer exists.</h5>
 		<?php endif ?>
 	</div>
 
 	<?php/* include('templates/footer.php');*/ ?>
-
+</body>
 </html>

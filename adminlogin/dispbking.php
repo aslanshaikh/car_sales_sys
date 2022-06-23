@@ -26,8 +26,7 @@ if(!isset($_SESSION['user'])) {
 <body>
   <!-- <h1>Hello, world!</h1> -->
   <div class="heading text-center text-uppercase">
-    hello sir
-    <?php echo $_SESSION['user'] ?> swagat hai
+    Welcome <?php echo $_SESSION['user'] ?>
   </div>
   <div class="container">
     <div class="col-lg-24">
@@ -45,7 +44,7 @@ if(!isset($_SESSION['user'])) {
         </tr>
 
         <?php
-          include'conn.php';
+          include('conn.php');
             $q = "select * from book";
 
             $query = mysqli_query($con,$q);

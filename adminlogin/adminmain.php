@@ -32,8 +32,14 @@ if(!isset($_SESSION['user'])) {
   <div class="container">
     <div class="col-lg-24">
       <br>
+      <div class="text-center">
+        <a href="insert.php" class=" btn btn-primary">Add Car </a>
+        <a href="dispbking.php" class=" btn btn-primary">Booking Details</a>
+        <a href="..\loginsign\logout.php" class=" btn btn-primary">logout </a>
+      </div>
+      <hr>
       <h2 class="text-warning text-center">Displaying Records </h2>
-
+      
       <table class="table table-striped table-hover table-bordered">
 
         <tr class="bg-dark text-white text-center">
@@ -79,7 +85,7 @@ if(!isset($_SESSION['user'])) {
           <img  src="<?php echo htmlspecialchars($res['images']); ?>" alt="Card image cap"> -->
           */?>
           </td> -->
-          <td>  <a class="btn btn-danger "href="delete.php?carid=<?php echo $res['carid']; ?>">delete</a>
+          <td>  <a class="btn btn-danger "href="delete.php?carid=<?php echo $res['carid']; ?>">Delete</a>
         </td>
         
               
@@ -90,10 +96,6 @@ if(!isset($_SESSION['user'])) {
       </table>
     </div>
   </div>
-  <a href="insert.php" class=" btn btn-primary">insert new car </a>
-  <a href="dispbking.php" class=" btn btn-primary">show booked car details</a>
-  
-  <a href="..\loginsign\logout.php" class=" btn btn-primary">logout </a>
   
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
